@@ -1,0 +1,12 @@
+function classificar() {
+  var criterio = SpreadsheetApp.getActiveSheet().getRange('P1').getValue(); 
+  var ordem = SpreadsheetApp.getActiveSheet().getRange('P2').getValue();
+  var matriz1 = SpreadsheetApp.getActiveSheet().getRange('P3').getValue();
+  var matriz2 = SpreadsheetApp.getActiveSheet().getRange('Q3').getValue();
+  var matriz = matriz1 + ':' + matriz2;
+  var spreadsheet = SpreadsheetApp.getActive();
+  spreadsheet.getRange(matriz).activate()
+  .sort({column: criterio, ascending: ordem});
+};
+
+
